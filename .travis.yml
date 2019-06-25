@@ -9,6 +9,10 @@ services: mongodb
 
 install:
   - pip install -r requirements.txt
+  - pip install --user codecov
 
 script:
   - python manage.py test
+
+after_success:
+  - codecov
