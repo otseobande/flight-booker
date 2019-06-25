@@ -1,4 +1,4 @@
-# Flight Booker
+# Flight Booker [![Build Status](https://travis-ci.com/otseobande/flight-booker.svg?branch=master)](https://travis-ci.com/otseobande/flight-booker) [![codecov](https://codecov.io/gh/otseobande/flight-booker/branch/master/graph/badge.svg)](https://codecov.io/gh/otseobande/flight-booker)
 
 ## Setup
 
