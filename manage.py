@@ -17,7 +17,13 @@ def run_server():
 def test():
     import pytest
 
-    pytest.main(['tests', '--exitfirst', '-s'])
+    pytest.main([
+        'tests',
+        '--exitfirst',
+        '-s',
+        '--cov-config=.coveragerc',
+        '--cov=api'
+    ])
 
 if __name__ == "__main__":
     manager.run()
