@@ -24,3 +24,8 @@ def test_should_return_404_if_user_id_is_invalid(client):
     response = client.get('/v1/passports/asdfasdfasdf/image.png')
 
     assert response.status_code == 404
+
+def test_should_return_404_if_user_id_is_not_found(client):
+    response = client.get('/v1/passports/5d13f589f7a33a7f74986c35/image.png')
+
+    assert response.status_code == 404
