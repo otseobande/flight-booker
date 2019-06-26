@@ -34,7 +34,7 @@ def test_it_should_register_user_successfully(client):
 
     response_body = json.loads(response.data)
 
-    assert response.status_code == 200
+    assert response.status_code == 201
     assert response_body['status'] == 'success'
     assert response_body['data']['user']['full_name'] == 'John Ade'
     assert 'password' not in response_body['data']['user']

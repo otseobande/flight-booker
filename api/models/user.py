@@ -28,6 +28,11 @@ class User(db.Document):
 
         document.updated_at = datetime.datetime.utcnow()
 
+    def verify_password(self, password):
+        password_hash = self.password.encode('utf-8')
+
+        return bcrypt.hashpw(password.encode('utf-8'), password_hash) == password_hash
+        
     def generate_token(self):
         token = jwt.encode(
             { 'id': str(self.id) },
