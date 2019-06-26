@@ -1,5 +1,5 @@
 import pytest
-from api.app import app
+from api.app import app, db
 
 @pytest.fixture
 def client():
@@ -7,3 +7,6 @@ def client():
     client = app.test_client()
 
     yield client
+
+    db.connection.drop_database('test')
+
