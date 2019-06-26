@@ -14,6 +14,8 @@ class User(db.Document):
     phone_number = db.StringField(required=True)
     address = db.StringField(required=True)
     password = db.StringField(required=True)
+    passport_photo = db.FileField()
+    passport_photo_url = db.StringField()
     created_at = db.DateTimeField(default=datetime.datetime.now)
     updated_at = db.DateTimeField(default=datetime.datetime.now)
 

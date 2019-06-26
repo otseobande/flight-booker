@@ -6,6 +6,10 @@
 
 - User registration
 - User login
+- Create flights
+- Get flights
+- Book a flight
+- Get flight bookings
 
 ## Setup
 
@@ -52,3 +56,7 @@ Run `python manage.py test` to run tests
 ## Documentation
 
 - [API Documentation](https://documenter.getpostman.com/view/3424044/S1a4Y7Yo?version=latest#ea2cb554-596b-4939-a55c-60a23c9bcb71)
+
+## Project Management
+
+[Pivotal Tracker](https://www.pivotaltracker.com) is used for this project. You can find the management board [here](https://www.pivotaltracker.com/n/projects/2358405)

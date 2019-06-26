@@ -93,8 +93,8 @@ class FlightBooking(Resource):
             else:
                 date = datetime.datetime.today()
 
-            beginning_of_day = date.replace(hour=0)
-            end_of_day = date.replace(hour=23)
+            beginning_of_day = date.replace(hour=0, minute=0)
+            end_of_day = date.replace(hour=23, minute=59)
 
             flight_tickets_query = FlightTicket.objects(
                 flight=flight,

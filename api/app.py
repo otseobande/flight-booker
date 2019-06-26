@@ -20,6 +20,10 @@ from api.resources.flight_tickets import (
     FlightTicketList,
     FlightBooking
 )
+from api.resources.passports import (
+    Passport,
+    ViewPassport
+)
 
 @app.route('/')
 def route_path():
@@ -35,5 +39,7 @@ api.add_resource(UserLogin, '/auth/login')
 api.add_resource(FlightList, '/flights')
 api.add_resource(FlightTicketList, '/flights/<string:flight_id>/book')
 api.add_resource(FlightBooking, '/flights/<string:flight_id>/bookings')
+api.add_resource(Passport, '/user/upload-passport')
+api.add_resource(ViewPassport, '/passports/<string:user_id>/<string:image_name>')
 
 app.register_blueprint(api_blueprint, url_prefix='/v1')
