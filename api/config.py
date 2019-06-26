@@ -8,3 +8,4 @@ class Config(object):
         'host': env_config('MONGO_URL')
     }
 
+
