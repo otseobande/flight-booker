@@ -1,3 +1,4 @@
+import math
 from flask import request
 from flask_restful import Resource
 
@@ -32,3 +33,30 @@ class FlightList(Resource):
                 'flight': self.flight_schema.dump(flight)
             }
         }, 201
+
+    @login_required
+    def get(self):
+        try:
+            limit = int(request.args.get('limit', 10))
+            page = int(request.args.get('page', 1))
+        except ValueError:
+            limit = 10
+            page = 1
+
+        offset = (page - 1) * limit
+
+        flights = Flight.objects.order_by('-created_at').skip(offset).limit(limit)
+        flight_count = Flight.objects.count()
+
+        return {
+            'status': 'success',
+            'data': {
+                'flights': self.flight_schema.dump(flights, many=True),
+                'meta': {
+                    'current_page': page,
+                    'limit': limit,
+                    'total_items': flight_count,
+                    'no_of_pages': math.ceil(flight_count / limit)
+                }
+            }
+        }
