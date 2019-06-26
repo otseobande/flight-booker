@@ -16,7 +16,10 @@ from api.resources.users import (
     UserLogin
 )
 from api.resources.flights import FlightList
-from api.resources.flight_tickets import FlightTicketList
+from api.resources.flight_tickets import (
+    FlightTicketList,
+    FlightBooking
+)
 
 @app.route('/')
 def route_path():
@@ -31,5 +34,6 @@ api.add_resource(UserRegister, '/auth/register')
 api.add_resource(UserLogin, '/auth/login')
 api.add_resource(FlightList, '/flights')
 api.add_resource(FlightTicketList, '/flights/<string:flight_id>/book')
+api.add_resource(FlightBooking, '/flights/<string:flight_id>/bookings')
 
 app.register_blueprint(api_blueprint, url_prefix='/v1')
