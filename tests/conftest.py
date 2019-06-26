@@ -1,4 +1,5 @@
 import pytest
+from decouple import config as env_config
 from api.app import app, db
 
 @pytest.fixture
@@ -8,5 +9,8 @@ def client():
 
     yield client
 
-    db.connection.drop_database('test')
+    database_url = env_config('MONGO_URL')
+    database_name = database_url.split('/')[-1]
+
+    db.connection.drop_database(database_name)
 
