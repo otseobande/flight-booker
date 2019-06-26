@@ -1,5 +1,9 @@
 from flask_script import Manager
 from decouple import config as env_config
+import coverage
+
+cov = coverage.Coverage()
+cov.start()
 
 from api.app import app
 
@@ -21,9 +25,11 @@ def test():
         'tests',
         '--exitfirst',
         '-s',
-        '--cov-config=.coveragerc',
-        '--cov=api'
     ])
+
+    cov.stop()
+    cov.save()
+    cov.html_report()
 
 if __name__ == "__main__":
     manager.run()

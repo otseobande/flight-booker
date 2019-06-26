@@ -9,3 +9,7 @@ class UserSchema(Schema):
     password = fields.Str(required=True)
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
+
+class UserLoginSchema(Schema):
+    email = fields.Str(required=True)
+    password = fields.Str(required=True)

@@ -2,6 +2,7 @@
 [run]
 branch = True
 omit = */wsgi.py
+source = api
 
 [report]
 # Regexes for lines to exclude from consideration
