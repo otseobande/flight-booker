@@ -1,4 +1,6 @@
-# Flight Booker [![Build Status](https://travis-ci.com/otseobande/flight-booker.svg?branch=master)](https://travis-ci.com/otseobande/flight-booker) [![codecov](https://codecov.io/gh/otseobande/flight-booker/branch/master/graph/badge.svg)](https://codecov.io/gh/otseobande/flight-booker)
+# Flight Booker
+
+[![Build Status](https://travis-ci.com/otseobande/flight-booker.svg?branch=master)](https://travis-ci.com/otseobande/flight-booker) [![codecov](https://codecov.io/gh/otseobande/flight-booker/branch/master/graph/badge.svg)](https://codecov.io/gh/otseobande/flight-booker)
 
 ## Features
 
@@ -30,6 +32,22 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+- Start the development server
+
+```bash
+python manage.py run_server
+```
+
+### Testing
+
+Run `python manage.py test` to run tests
+
+## Technologies Used
+
+- [Flask](http://flask.pocoo.org/)
+- [MongoDB](https://www.mongodb.com/)
+
 
 ## Documentation
 
