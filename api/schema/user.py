@@ -7,6 +7,7 @@ class UserSchema(Schema):
     phone_number = fields.Str(required=True)
     address = fields.Str(required=True)
     password = fields.Str(required=True)
+    passport_photo_url = fields.Str()
     created_at = fields.DateTime(dump_only=True)
     updated_at = fields.DateTime(dump_only=True)
 

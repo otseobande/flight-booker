@@ -66,4 +66,3 @@ class UserLogin(Resource):
                 'message': 'Email or password is incorrect, please check your credentials.'
             }, 401
 
-
