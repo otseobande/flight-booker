@@ -32,7 +32,7 @@ class User(db.Document):
         password_hash = self.password.encode('utf-8')
 
         return bcrypt.hashpw(password.encode('utf-8'), password_hash) == password_hash
-        
+
     def generate_token(self):
         token = jwt.encode(
             { 'id': str(self.id) },
@@ -41,5 +41,15 @@ class User(db.Document):
         )
 
         return token.decode('utf-8')
+
+    @staticmethod
+    def decode_token(token):
+        payload = jwt.decode(
+            token,
+            secret,
+            algorithms=['HS256']
+        )
+
+        return payload
 
 signals.pre_save.connect(User.pre_save, sender=User)
