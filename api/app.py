@@ -10,11 +10,13 @@ CORS(app)
 app.config.from_object('api.config.Config')
 db = MongoEngine(app)
 
+# resources
 from api.resources.users import (
     UserRegister,
     UserLogin
 )
 from api.resources.flights import FlightList
+from api.resources.flight_tickets import FlightTicketList
 
 @app.route('/')
 def route_path():
@@ -28,5 +30,6 @@ api = Api(api_blueprint)
 api.add_resource(UserRegister, '/auth/register')
 api.add_resource(UserLogin, '/auth/login')
 api.add_resource(FlightList, '/flights')
+api.add_resource(FlightTicketList, '/flights/<string:flight_id>/book')
 
 app.register_blueprint(api_blueprint, url_prefix='/v1')
