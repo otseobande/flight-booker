@@ -1,7 +1,11 @@
 from flask import Flask, Blueprint, jsonify
+import logging
 from flask_restful import Resource, Api
 from flask_mongoengine import MongoEngine
 from flask_cors import CORS
+
+logging.basicConfig()
+logging.getLogger('apscheduler').setLevel(logging.DEBUG)
 
 app = Flask(__name__)
 
@@ -24,6 +28,7 @@ from api.resources.passports import (
     Passport,
     ViewPassport
 )
+from api.scheduler import scheduler
 
 @app.route('/')
 def route_path():

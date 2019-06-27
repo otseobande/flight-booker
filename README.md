@@ -31,6 +31,10 @@ virtualenv venv
 source venv/bin/activate
 ```
 
+- Setup environment variables
+
+  Create a `.env` file, copy the content of the `.env.example` file into it and fill the necessary credentials
+
 - Install dependencies
 
 ```bash
