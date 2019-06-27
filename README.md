@@ -51,6 +51,14 @@ python manage.py run_server
 
 Run `python manage.py test` to run tests
 
+#### Performance monitoring
+
+To test application performance run
+
+```bash
+locust --host=<application-host>
+```
+
 ## Technologies Used
 
 - [Flask](http://flask.pocoo.org/)
