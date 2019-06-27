@@ -5,7 +5,7 @@ import coverage
 cov = coverage.Coverage()
 cov.start()
 
-from api.app import app
+from api.app import app, scheduler
 
 manager = Manager(app)
 
@@ -30,6 +30,10 @@ def test():
     cov.stop()
     cov.save()
     cov.html_report()
+
+@manager.command
+def start_scheduler():
+    scheduler.start()
 
 if __name__ == "__main__":
     manager.run()
